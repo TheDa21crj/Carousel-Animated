@@ -1,35 +1,86 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useRef, useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import "./index.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const Slider = () => {
+  const slideRef = useRef(null);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  const handleClickNext = () => {
+    let items = slideRef.current.querySelectorAll(".item");
+    slideRef.current.appendChild(items[0]);
+  };
+
+  const handleClickPrev = () => {
+    let items = slideRef.current.querySelectorAll(".item");
+    slideRef.current.prepend(items[items.length - 1]);
+  };
+
+  const data = [
+    {
+      id: 1,
+      imgUrl: "https://i.postimg.cc/PrMGqZwx/pexels-m-venter-1659437.jpg",
+      desc: "Some beautiful roads cannot be discovered without getting loss.",
+      name: "EXPLORE NATURE",
+    },
+    {
+      id: 2,
+      imgUrl:
+        "https://i.postimg.cc/bw6KxhLf/pexels-eberhard-grossgasteiger-1062249.jpg",
+      desc: "Some beautiful roads cannot be discovered without getting loss.",
+      name: "EXPLORE NATURE",
+    },
+    {
+      id: 3,
+      imgUrl:
+        "https://i.postimg.cc/CMkTW9Mb/pexels-eberhard-grossgasteiger-572897.jpg",
+      desc: "Some beautiful roads cannot be discovered without getting loss.",
+      name: "EXPLORE NATURE",
+    },
+    {
+      id: 5,
+      imgUrl: "https://i.postimg.cc/6qdkn4bM/pexels-joyston-judah-933054.jpg",
+      desc: "Some beautiful roads cannot be discovered without getting loss.",
+      name: "EXPLORE NATURE",
+    },
+    {
+      id: 6,
+      imgUrl:
+        "https://i.postimg.cc/RVm59Gqy/pexels-roberto-nickson-2559941.jpg",
+      desc: "Some beautiful roads cannot be discovered without getting loss.",
+      name: "EXPLORE NATURE",
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
+      <div id="slide" ref={slideRef}>
+        {data.map((item) => (
+          <div
+            key={item.id}
+            className="item"
+            style={{ backgroundImage: `url(${item.imgUrl})` }}
+          >
+            <div className="content">
+              <div className="name">{item.name}</div>
+              <div className="des">{item.desc}</div>
+              <button>See more</button>
+            </div>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="buttons">
+        <button id="prev" onClick={handleClickPrev}>
+          <FontAwesomeIcon icon={faAngleLeft} />
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button id="next" onClick={handleClickNext}>
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default Slider;
