@@ -14,22 +14,29 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 export default function Home() {
   return (
     <div className={HCss.mDiv}>
-      {ImgList ? (
-        <>
-          {ImgList.map((val) => {
-            return (
-              <Cards
-                id={val.id}
-                imgUrl={val.imgUrl}
-                name={val.name}
-                desc={val.desc}
-              />
-            );
-          })}
-        </>
-      ) : (
-        ""
-      )}
+      <div
+        className="loadbar"
+        //   style={{ width: `${loadingProgress}%` }}
+        style={{ width: `60%` }}
+      ></div>
+      <div id="slide" ref={slideRef}>
+        {ImgList ? (
+          <>
+            {ImgList.map((val) => {
+              return (
+                <Cards
+                  id={val.id}
+                  imgUrl={val.imgUrl}
+                  name={val.name}
+                  desc={val.desc}
+                />
+              );
+            })}
+          </>
+        ) : (
+          ""
+        )}
+      </div>
       <div className="buttons">
         <button
           id="prev"
