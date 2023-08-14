@@ -1,7 +1,4 @@
-import React from "react";
-
-// Components
-import Cards from "../Components/Home/Cards";
+import React, { useRef, useEffect, useState } from "react";
 
 // Data
 import ImgList from "./../Data/ImgList.json";
@@ -12,6 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const slideRef = useRef(null);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  const handleClickNext = () => {
+    let items = slideRef.current.querySelectorAll(".item");
+    slideRef.current.appendChild(items[0]);
+  };
+
+  const handleClickPrev = () => {
+    let items = slideRef.current.querySelectorAll(".item");
+    slideRef.current.prepend(items[items.length - 1]);
+  };
   return (
     <div className={HCss.mDiv}>
       <div
@@ -19,20 +28,22 @@ export default function Home() {
         //   style={{ width: `${loadingProgress}%` }}
         style={{ width: `60%` }}
       ></div>
-      <div
-        id={HCss.slide}
-        //   ref={slideRef}
-      >
+      <div id={HCss.slide} ref={slideRef}>
         {ImgList ? (
           <>
             {ImgList.map((val) => {
               return (
-                <Cards
-                  id={val.id}
-                  imgUrl={val.imgUrl}
-                  name={val.name}
-                  desc={val.desc}
-                />
+                <div
+                  key={val.id}
+                  className={HCss.item}
+                  style={{ backgroundImage: `url(${val.imgUrl})` }}
+                >
+                  <div className={HCss.content}>
+                    <div className={HCss.name}>{val.name}</div>
+                    <div className={HCss.des}>{val.desc}</div>
+                    <button>See more</button>
+                  </div>
+                </div>
               );
             })}
           </>
@@ -41,16 +52,10 @@ export default function Home() {
         )}
       </div>
       <div className={HCss.buttons}>
-        <button
-          id={HCss.prev}
-          // onClick={handleClickPrev}
-        >
+        <button id={HCss.prev} onClick={handleClickPrev}>
           <FontAwesomeIcon icon={faAngleLeft} />
         </button>
-        <button
-          id={HCss.next}
-          // onClick={handleClickNext}
-        >
+        <button id={HCss.next} onClick={handleClickNext}>
           <FontAwesomeIcon icon={faAngleRight} />
         </button>
       </div>
