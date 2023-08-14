@@ -6,7 +6,7 @@ import CCss from "./Css/Cards.module.css";
 export default function Cards(props) {
   return (
     <div
-      key={item.id}
+      key={props.id}
       className="item"
       style={{ backgroundImage: `url(${props.imgUrl})` }}
     >
