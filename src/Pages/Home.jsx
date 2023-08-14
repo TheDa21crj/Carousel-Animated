@@ -15,9 +15,10 @@ export default function Home() {
   useEffect(() => {
     //     console.log(slideRef);
     // }, [loadingProgress]);
+    console.log(loadingProgress);
     setTimeout(loadingBar, 5000);
     // loadingBar();
-  }, []);
+  }, [loadingProgress]);
 
   const handleClickNext = () => {
     let items = slideRef.current.querySelectorAll("#item");
@@ -32,6 +33,7 @@ export default function Home() {
   };
 
   const loadingBar = () => {
+    setLoadingProgress(loadingProgress + 1);
     handleClickNext();
   };
 
