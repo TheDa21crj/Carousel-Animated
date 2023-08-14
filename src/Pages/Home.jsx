@@ -50,7 +50,6 @@ export default function Home() {
                   <div className={HCss.content}>
                     <div className={HCss.name}>{val.name}</div>
                     <div className={HCss.des}>{val.desc}</div>
-                    <button>See more</button>
                   </div>
                 </div>
               );
