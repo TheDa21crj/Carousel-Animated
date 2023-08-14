@@ -13,7 +13,6 @@ export default function Home() {
   const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
-    console.log(loadingProgress);
     setTimeout(loadingBar, 5000);
   }, [loadingProgress]);
 
