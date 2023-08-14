@@ -10,9 +10,9 @@ export default function Cards(props) {
       className={CCss.item}
       style={{ backgroundImage: `url(${props.imgUrl})` }}
     >
-      <div className="content">
-        <div className="name">{props.name}</div>
-        <div className="des">{props.desc}</div>
+      <div className={CCss.content}>
+        <div className={CCss.name}>{props.name}</div>
+        <div className={CCss.des}>{props.desc}</div>
         <button>See more</button>
       </div>
     </div>
