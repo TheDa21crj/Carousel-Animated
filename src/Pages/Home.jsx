@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     //     console.log(slideRef);
     // }, [loadingProgress]);
-    setTimeout(loadingBar, 5500);
+    setTimeout(loadingBar, 5000);
     // loadingBar();
   }, []);
 
