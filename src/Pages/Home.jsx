@@ -12,11 +12,14 @@ export default function Home() {
       Home
       {ImgList ? (
         <>
-          {ImgList.map((val, key) => {
+          {ImgList.map((val) => {
             return (
-              <>
-                <Cards key={val.id} />
-              </>
+              <Cards
+                id={val.id}
+                imgUrl={val.imgUrl}
+                name={val.name}
+                desc={val.desc}
+              />
             );
           })}
         </>
