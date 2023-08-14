@@ -150,6 +150,14 @@
   opacity: 0;
 }
 
+.bn {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  background-color: red;
+  z-index: 3;
+}
+
 .item .content {
   position: absolute;
   top: 50%;
