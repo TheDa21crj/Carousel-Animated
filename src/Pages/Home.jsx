@@ -11,12 +11,11 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 export default function Home() {
   const slideRef = useRef(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const [resetProgress, setResetProgress] = useState(false);
 
   useEffect(() => {
     //     console.log(slideRef);
     // }, [loadingProgress]);
-    // const myTimeout = setTimeout(myGreeting, 5000);
+    setTimeout(loadingBar, 5500);
     // loadingBar();
   }, []);
 
@@ -32,9 +31,9 @@ export default function Home() {
     // setResetProgress(true);
   };
 
-  //   const loadingBar = () => {
-  //     console.log("Loading...");
-  //   };
+  const loadingBar = () => {
+    handleClickNext();
+  };
 
   return (
     <div className={HCss.mDiv}>
