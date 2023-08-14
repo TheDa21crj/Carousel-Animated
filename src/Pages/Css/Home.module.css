@@ -1,11 +1,12 @@
 .mDiv {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: #0f0e0e;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #0f0e0e;
+  overflow-x: hidden;
 }
 
 #slide {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
