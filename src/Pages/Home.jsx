@@ -39,10 +39,10 @@ export default function Home() {
       <div id={HCss.slide} ref={slideRef}>
         {ImgList ? (
           <>
-            {ImgList.map((val) => {
+            {ImgList.map((val, key) => {
               return (
                 <div
-                  key={val.id}
+                  key={key}
                   id="item"
                   className={HCss.item}
                   style={{ backgroundImage: `url(${val.imgUrl})` }}
