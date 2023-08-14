@@ -7,7 +7,7 @@ export default function Cards(props) {
   return (
     <div
       key={props.id}
-      className="item"
+      className={CCss.item}
       style={{ backgroundImage: `url(${props.imgUrl})` }}
     >
       <div className="content">
