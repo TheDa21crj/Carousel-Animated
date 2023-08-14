@@ -13,7 +13,7 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
-    <div>
+    <div className={HCss.mDiv}>
       {ImgList ? (
         <>
           {ImgList.map((val) => {
