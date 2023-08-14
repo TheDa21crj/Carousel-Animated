@@ -19,7 +19,10 @@ export default function Home() {
         //   style={{ width: `${loadingProgress}%` }}
         style={{ width: `60%` }}
       ></div>
-      <div id="slide" ref={slideRef}>
+      <div
+        id={HCss.slide}
+        //   ref={slideRef}
+      >
         {ImgList ? (
           <>
             {ImgList.map((val) => {
