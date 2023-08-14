@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React from "react";
+import React, { Suspense } from "react";
 
 // Pages
 const Home = React.lazy(() => import("./Pages/Home"));
@@ -13,22 +13,24 @@ export default function App() {
     <BrowserRouter>
       <div className="page">
         <div className="pageExt">
-          <Route
-            path="/"
-            element={
-              <Suspense fallback={<Loading />}>
-                <Home />
-              </Suspense>
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <Suspense fallback={<Loading />}>
-                <Error />
-              </Suspense>
-            }
-          />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Home />
+                </Suspense>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <Error />
+                </Suspense>
+              }
+            />
+          </Routes>
         </div>
       </div>
     </BrowserRouter>
