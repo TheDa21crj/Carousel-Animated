@@ -35,18 +35,35 @@
 }
 
 .item:nth-child(3) {
-  left: 50%;
+  left: 47%;
 }
 
 .item:nth-child(4) {
-  left: calc(50% + 220px);
+  left: calc(47% + 220px);
 }
 
 .item:nth-child(5) {
-  left: calc(50% + 440px);
+  left: calc(47% + 440px);
 }
 
 .item:nth-child(n + 6) {
-  left: calc(50% + 660px);
+  left: calc(47% + 660px);
   opacity: 0;
+}
+
+.item .content {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  width: 300px;
+  text-align: left;
+  padding: 0;
+  color: #eee;
+  transform: translate(0, -50%);
+  display: none;
+}
+
+.item:nth-child(2) .content {
+  display: block;
+  z-index: 11111;
 }
