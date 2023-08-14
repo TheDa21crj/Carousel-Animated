@@ -1,6 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 
+// Pages
+const Home = React.lazy(() => import("./Pages/Home"));
+const Error = React.lazy(() => import("./Pages/Error"));
+
 // Loading
 import Loading from "./MicroInterAction/Loading";
 
@@ -17,7 +21,14 @@ export default function App() {
               </Suspense>
             }
           />
-          Hello World
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Loading />}>
+                <Error />
+              </Suspense>
+            }
+          />
         </div>
       </div>
     </BrowserRouter>
