@@ -14,12 +14,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0f0e0e;
+  background-color: #d3d3d3;
 
 }
 
 .pageExt {
   max-width: 1750px;
   width: 100%;
-  background-color: #e5e5e5;
+  background-color: #fff;
 }
