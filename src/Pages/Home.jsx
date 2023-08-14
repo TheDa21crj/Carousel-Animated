@@ -13,12 +13,12 @@ export default function Home() {
   const [loadingProgress, setLoadingProgress] = useState(0);
 
   const handleClickNext = () => {
-    let items = slideRef.current.querySelectorAll(".item");
+    let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.appendChild(items[0]);
   };
 
   const handleClickPrev = () => {
-    let items = slideRef.current.querySelectorAll(".item");
+    let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.prepend(items[items.length - 1]);
   };
   return (
@@ -35,6 +35,7 @@ export default function Home() {
               return (
                 <div
                   key={val.id}
+                  id="item"
                   className={HCss.item}
                   style={{ backgroundImage: `url(${val.imgUrl})` }}
                 >
