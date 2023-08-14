@@ -40,15 +40,15 @@ export default function Home() {
           ""
         )}
       </div>
-      <div className="buttons">
+      <div className={HCss.buttons}>
         <button
-          id="prev"
+          id={HCss.prev}
           // onClick={handleClickPrev}
         >
           <FontAwesomeIcon icon={faAngleLeft} />
         </button>
         <button
-          id="next"
+          id={HCss.next}
           // onClick={handleClickNext}
         >
           <FontAwesomeIcon icon={faAngleRight} />
