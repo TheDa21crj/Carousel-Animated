@@ -1,30 +1,25 @@
 [
   {
-    "id": 1,
     "imgUrl": "https://uploads-ssl.webflow.com/61dd733efbe56d4e2f5f701f/64da13606e45148f04766f74_img1.jpg",
     "desc": "Some beautiful roads cannot be discovered without getting loss.",
     "name": "EXPLORE NATURE"
   },
   {
-    "id": 2,
     "imgUrl": "https://uploads-ssl.webflow.com/61dd733efbe56d4e2f5f701f/64da135d89b36312a4795298_img2.jpg",
     "desc": "Some beautiful roads cannot be discovered without getting loss.",
     "name": "EXPLORE NATURE"
   },
   {
-    "id": 3,
     "imgUrl": "https://uploads-ssl.webflow.com/61dd733efbe56d4e2f5f701f/64da135ef2389076b00066f1_img3.jpg",
     "desc": "Some beautiful roads cannot be discovered without getting loss.",
     "name": "EXPLORE NATURE"
   },
   {
-    "id": 4,
     "imgUrl": "https://uploads-ssl.webflow.com/61dd733efbe56d4e2f5f701f/64da135dbabe068ee1835b60_img4.jpg",
     "desc": "Some beautiful roads cannot be discovered without getting loss.",
     "name": "EXPLORE NATURE"
   },
   {
-    "id": 5,
     "imgUrl": "https://uploads-ssl.webflow.com/61dd733efbe56d4e2f5f701f/64da135e83ce55b0a23af76e_img6.jpg",
     "desc": "Some beautiful roads cannot be discovered without getting loss.",
     "name": "EXPLORE NATURE"
