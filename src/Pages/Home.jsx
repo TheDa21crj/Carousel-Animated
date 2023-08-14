@@ -8,8 +8,6 @@ import HCss from "./Css/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-import a from "./../assets/img1.jpg";
-
 export default function Home() {
   const slideRef = useRef(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
