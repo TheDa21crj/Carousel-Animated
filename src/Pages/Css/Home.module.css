@@ -89,7 +89,7 @@
 .item {
   width: 200px;
   height: 100px;
-  background-position: 50% 50%;
+  background-position: center;
   transition: 0.8s;
   background-size: cover;
   position: absolute;
