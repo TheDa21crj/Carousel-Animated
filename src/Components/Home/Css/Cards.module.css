@@ -1,14 +1,17 @@
 .item {
-    width: 200px;
-    height: 100px;
-    background-position: 50% 50%;
-    display: inline-block;
-    transition: 0.8s;
-    background-size: cover;
-    /* position: absolute; */
-    z-index: 1;
-    bottom: 10%;
-    transform: translate(0, -50%);
-    border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
+  width: 200px;
+  height: 100px;
+  background-position: 50% 50%;
+  transition: 0.8s;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  bottom: 10%;
+  transform: translate(0, -50%);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px #343131;
+}
+
+.item:nth-child(1) {
+  display: none;
 }
