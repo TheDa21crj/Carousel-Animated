@@ -13,23 +13,18 @@ export default function Home() {
   const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
-    //     console.log(slideRef);
-    // }, [loadingProgress]);
     console.log(loadingProgress);
     setTimeout(loadingBar, 5000);
-    // loadingBar();
   }, [loadingProgress]);
 
   const handleClickNext = () => {
     let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.appendChild(items[0]);
-    // setResetProgress(true);
   };
 
   const handleClickPrev = () => {
     let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.prepend(items[items.length - 1]);
-    // setResetProgress(true);
   };
 
   const loadingBar = () => {
@@ -39,10 +34,7 @@ export default function Home() {
 
   return (
     <div className={HCss.mDiv}>
-      <div
-        className={HCss.loadbar}
-        // style={{ width: `${loadingProgress}%` }}
-      >
+      <div className={HCss.loadbar}>
         <div className={HCss.curState}></div>
       </div>
       <div id={HCss.slide} ref={slideRef}>
