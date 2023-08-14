@@ -11,22 +11,29 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 export default function Home() {
   const slideRef = useRef(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [resetProgress, setResetProgress] = useState(false);
+
+  useEffect(() => {
+    console.log(slideRef);
+  }, [loadingProgress]);
 
   const handleClickNext = () => {
     let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.appendChild(items[0]);
+    setResetProgress(true);
   };
 
   const handleClickPrev = () => {
     let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.prepend(items[items.length - 1]);
+    setResetProgress(true);
   };
+
   return (
     <div className={HCss.mDiv}>
       <div
-        className="loadbar"
-        //   style={{ width: `${loadingProgress}%` }}
-        style={{ width: `60%` }}
+        className={HCss.loadbar}
+        style={{ width: `${loadingProgress}%` }}
       ></div>
       <div id={HCss.slide} ref={slideRef}>
         {ImgList ? (
