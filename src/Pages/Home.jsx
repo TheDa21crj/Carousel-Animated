@@ -12,9 +12,9 @@ export default function Home() {
   const slideRef = useRef(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
 
-  useEffect(() => {
-    setTimeout(loadingBar, 5000);
-  }, [loadingProgress]);
+  //   useEffect(() => {
+  //     setTimeout(loadingBar, 5000);
+  //   }, [loadingProgress]);
 
   const handleClickNext = () => {
     let items = slideRef.current.querySelectorAll("#item");
@@ -26,10 +26,10 @@ export default function Home() {
     slideRef.current.prepend(items[items.length - 1]);
   };
 
-  const loadingBar = () => {
-    setLoadingProgress(loadingProgress + 1);
-    handleClickNext();
-  };
+  //   const loadingBar = () => {
+  //     setLoadingProgress(loadingProgress + 1);
+  //     handleClickNext();
+  //   };
 
   return (
     <div className={HCss.mDiv}>
