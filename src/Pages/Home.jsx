@@ -19,11 +19,15 @@ export default function Home() {
   const handleClickNext = () => {
     let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.appendChild(items[0]);
+
+    restartAnimation();
   };
 
   const handleClickPrev = () => {
     let items = slideRef.current.querySelectorAll("#item");
     slideRef.current.prepend(items[items.length - 1]);
+
+    restartAnimation();
   };
 
   const loadingBar = () => {
@@ -31,10 +35,22 @@ export default function Home() {
     handleClickNext();
   };
 
+  const restartAnimation = () => {
+    let circle = document.querySelector("#run");
+
+    circle.style.animationName = "imgAni";
+
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        circle.style.animationName = "";
+      }, 0);
+    });
+  };
+
   return (
     <div className={HCss.mDiv}>
       <div className={HCss.loadbar}>
-        <div className={HCss.curState}></div>
+        <div className={HCss.curState} id="run"></div>
       </div>
       <div id={HCss.slide} ref={slideRef}>
         {ImgList ? (
