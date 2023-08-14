@@ -90,7 +90,7 @@
   height: 100px;
   background-position: center;
   transition: 0.8s;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
@@ -153,13 +153,14 @@
 .item .content {
   position: absolute;
   top: 50%;
-  left: 100px;
-  width: 300px;
-  text-align: left;
+  left: 0px;
+  width: 100%;
+  text-align: center;
   padding: 0;
   color: #eee;
   transform: translate(0, -50%);
   display: none;
+  text-shadow: 0 0 2px #0f0e0e;
 }
 
 .item:nth-child(2) .content {
