@@ -94,8 +94,7 @@
   background-size: cover;
   position: absolute;
   z-index: 1;
-  bottom: 10%;
-  transform: translate(0, -50%);
+  top: 65%;
   border-radius: 20px;
   box-shadow: 5px 5px 20px #343131;
 }
@@ -120,6 +119,19 @@
   width: 100%;
   height: 100%;
   box-shadow: none;
+  animation: imgAni 0.8s linear 1 forwards;
+}
+
+@keyframes imgAni {
+  0% {
+    left: 47%;
+    bottom: 10%;
+  }
+  100% {
+    left: 0px;
+    /* top: 0px; */
+    bottom: 0%;
+  }
 }
 
 .item:nth-child(3) {
