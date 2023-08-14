@@ -177,6 +177,7 @@
   backdrop-filter: blur(10px);
   color: #fff;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .buttons button:hover {
